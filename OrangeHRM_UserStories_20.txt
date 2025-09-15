@@ -1,0 +1,594 @@
+StoryID        Epic            Title       Role     AsA       IWant       SoThat    PriorityStoryPoints Risk DependenciesAcceptanceCriteria              Gherkin          NonFunctional          Notes
+                                                                                                                                                 Feature: Employee
+                                                                                                                                                 Onboarding - OHRM-
+                                                                                                                                                 US-001
+                                                                                                                                                   As a HR Manager
+                                                                                                                                                   I want to create
+                                                                                                                                                 onboarding checklists
+                                                                                                                                                 and assign tasks to
+                                                                                                                                                 new hires
+                                                                                                                                                   So that new
+                                                                                                                                                 employees are
+                                                                                                                                                 productive from day
+                                                                                                                            AC1: User can new one
+                                                                                                                            hires; validation
+                                                                                                                            shown for required Scenario: Happy path
+                                                                                                                            fields.                  Given an authorized
+                                                                                                                            AC2: Only            HR Manager is logged
+                                                                                                                            authorized roles can in
+                                                                                                                            access this feature.     When they complete
+                           As a HR                                                                                          AC3: Actions are     the primary action
+                           Manager, I                                                                                       audited with user,       Then the system
+                           want to                                                                                          timestamp,           records it and shows a
+                           create                                                                                           before/after values. success confirmation
+                           onboarding                                                                                       AC4: Notifications                            Security: RBAC
+                           checklists                                                                                       are sent on key        Scenario: Permission & audit;
+                           and assign                                                                                       state changes        denied                   Performance:
+                           tasks to new                                                                                     (create, approve,        Given an             p95<500ms;
+                           hires, so that                  to create                                                        reject).             unauthorized user        Availability:
+                           new                             onboarding new                                                   AC5: Errors are          When they attempt 99.9% monthly; Created 2025-09-
+                           employees                       checklists employees                                             clear; retries and   the action               Usability:      12T10:02:01.313117Z
+                           are                             and assign are                                  User,            idempotency              Then access is       WCAG AA;        | UUID=49190fd2-
+OHRM-                      productive     HR     As a HR   tasks to new productive                         Workflow,        handled where        denied with an           Privacy: PII    f26a-4b9b-a89f-
+US-001 Employee Onboarding from day one. Manager Manager   hires        from day oneMust            3MediumNotifications    applicable.          explanatory message masked in logs. 8031b6a9b7fa
+                                                                                                                                                 Feature: Leave
+                                                                                                                                                 Management - OHRM-
+                                                                                                                                                 US-002
+                                                                                                                                                   As a Employee
+                                                                                                                                                   I want to request paid
+                                                                                                                                                 time off from web or
+                                                                                                                            AC1: User can        mobile
+                                                                                                                            request paid time off So that I can plan
+                                                                                                                            from web or mobile; vacations easily
+                                                                                                                            validation shown for
+                                                                                                                            required fields.       Scenario: Happy path
+                                                                                                                            AC2: Only                Given an authorized
+                                                                                                                            authorized roles can Employee is logged in
+                                                                                                                            access this feature.     When they complete
+                                                                                                                            AC3: Actions are     the primary action
+                                                                                                                            audited with user,       Then the system
+                                                                                                                            timestamp,           records it and shows a
+                           As a                                                                                             before/after values. success confirmation
+                           Employee, I                                                                                      AC4: Notifications                            Security: RBAC
+                           want to                                                                                          are sent on key        Scenario: Permission & audit;
+                           request paid                                                                                     state changes        denied                   Performance:
+                           time off from                                                                                    (create, approve,        Given an             p95<500ms;
+                           web or                                                                                           reject).             unauthorized user        Availability:
+                           mobile, so                                                                                       AC5: Errors are          When they attempt 99.9% monthly; Created 2025-09-
+                           that I can                    to request                                                         clear; retries and   the action               Usability:      12T10:02:01.313231Z
+                           plan                          paid time off I can plan                           Leave,          idempotency              Then access is       WCAG AA;        | UUID=d2b737e2-
+OHRM-                      vacations             As a    from web or vacations                              Calendar,       handled where        denied with an           Privacy: PII    0c4e-4553-ac57-
+US-002 Leave Management    easily.       EmployeeEmployeemobile        easily       Should          5High   Notifications   applicable.          explanatory message masked in logs. c8821fb460fd
+                                                                                                                                                 Feature: Time Tracking
+                                                                                                                                                 - OHRM-US-003
+                                                                                                                                                   As a Team Lead
+                                                                                                                                                   I want to approve
+                                                                                                                                                 timesheets in bulk
+                                                                                                                            AC1: User can          So that payroll runs
+                                                                                                                            approve timesheets on time with correct
+                                                                                                                            in bulk; validation  hours
+                                                                                                                            shown for required
+                                                                                                                            fields.                Scenario: Happy path
+                                                                                                                            AC2: Only                Given an authorized
+                                                                                                                            authorized roles can Team Lead is logged in
+                                                                                                                            access this feature.     When they complete
+                                                                                                                            AC3: Actions are     the primary action
+                                                                                                                            audited with user,       Then the system
+                                                                                                                            timestamp,           records it and shows a
+                                                                                                                            before/after values. success confirmation
+                                                                                                                            AC4: Notifications
+                                                                                                                            are sent on key        Scenario: Permission Security: RBAC
+                                                                                                                            state changes        denied                   & audit;
+                           As a Team                                                                                        (create, approve,        Given an             Performance:
+                           Lead, I want                                                                                     reject).             unauthorized user        p95<500ms;
+                           to approve                                                                                       AC5: Errors are          When they attempt Availability:
+                           timesheets in                                                                                    clear; retries and   the action               99.9% monthly; Created 2025-09-
+                           bulk, so that                              payroll runs                                          idempotency              Then access is       Usability:      12T10:02:01.313266Z
+                           payroll runs           As a     to approve on time with                                          handled where        denied with an           WCAG AA;        | UUID=a24f000f-
+OHRM-                      on time with Team      Team     timesheets correct                               Timesheet,      applicable.          explanatory message      Privacy: PII    1356-4331-972c-
+US-003 Time Tracking       correct hours. Lead    Lead     in bulk    hours        Could            8Low    Payroll                                                       masked in logs. 8b4b8f21f6c2
+                                                                                                                                                 Feature: Performance
+                                                                                                                                                 Management - OHRM-
+                                                                                                                                                 US-004
+                                                                                                                                                   As a HR Manager
+                                                                                                                                                   I want to schedule
+                                                                                                                                                 and track performance
+                                                                                                                            AC1: User can        reviews
+                                                                                                                            schedule and track So that we maintain
+                                                                                                                            performance          continuous feedback
+                                                                                                                            reviews; validation
+                                                                                                                            shown for required Scenario: Happy path
+                                                                                                                            fields.                  Given an authorized
+                                                                                                                            AC2: Only            HR Manager is logged
+                                                                                                                            authorized roles can in
+                                                                                                                            access this feature.     When they complete
+                                                                                                                            AC3: Actions are     the primary action
+                                                                                                                            audited with user,       Then the system
+                                                                                                                            timestamp,           records it and shows a
+                           As a HR                                                                                          before/after values. success confirmation
+                           Manager, I                                                                                       AC4: Notifications                            Security: RBAC
+                           want to                                                                                          are sent on key        Scenario: Permission & audit;
+                           schedule and                                                                                     state changes        denied                   Performance:
+                           track                                                                                            (create, approve,        Given an             p95<500ms;
+                           performance                                                                                      reject).             unauthorized user        Availability:
+                           reviews, so                                                                                      AC5: Errors are          When they attempt 99.9% monthly; Created 2025-09-
+                           that we                         to schedule                                                      clear; retries and   the action               Usability:      12T10:02:01.313299Z
+                           maintain                        and track we maintain                                            idempotency              Then access is       WCAG AA;        | UUID=07cec522-
+OHRM- Performance          continuous HR        As a HR    performancecontinuous                           Users,           handled where        denied with an           Privacy: PII    bdef-4b73-93b7-
+US-004 Management          feedback.    Manager Manager    reviews     feedback  Must              13MediumReviews          applicable.          explanatory message masked in logs. 35a484f3e88c
+                                                                                                                                           Feature: Recruitment -
+                                                                                                                                           OHRM-US-005
+                                                                                                                                             As a Recruiter
+                                                                                                                                             I want to publish job
+                                                                                                                      AC1: User can        postings and screen
+                                                                                                                      publish job postings candidates
+                                                                                                                      and screen             So that we hire faster
+                                                                                                                      candidates;          with better quality
+                                                                                                                      validation shown for
+                                                                                                                      required fields.       Scenario: Happy path
+                                                                                                                      AC2: Only                Given an authorized
+                                                                                                                      authorized roles can Recruiter is logged in
+                                                                                                                      access this feature.     When they complete
+                                                                                                                      AC3: Actions are     the primary action
+                                                                                                                      audited with user,       Then the system
+                                                                                                                      timestamp,           records it and shows a
+                        As a                                                                                          before/after values. success confirmation
+                        Recruiter, I                                                                                  AC4: Notifications                            Security: RBAC
+                        want to                                                                                       are sent on key        Scenario: Permission & audit;
+                        publish job                                                                                   state changes        denied                   Performance:
+                        postings and                                                                                  (create, approve,        Given an             p95<500ms;
+                        screen                                                                                        reject).             unauthorized user        Availability:
+                        candidates,                                                                                   AC5: Errors are          When they attempt 99.9% monthly; Created 2025-09-
+                        so that we                         to publish                                                 clear; retries and   the action               Usability:      12T10:02:01.313326Z
+                        hire faster                        job postings we hire                       Jobs,           idempotency              Then access is       WCAG AA;        | UUID=513520c8-
+OHRM-                   with better            As a        and screen faster with                     Candidates,     handled where        denied with an           Privacy: PII    5687-49e4-b7df-
+US-005 Recruitment      quality.     Recruiter Recruiter   candidates better qualityShould    3High   Email           applicable.          explanatory message masked in logs. 466b2c7171f3
+                                                                                                                                           Feature: Payroll -
+                                                                                                                                           OHRM-US-006
+                                                                                                                                             As a Payroll
+                                                                                                                                           Specialist
+                                                                                                                                             I want to export
+                                                                                                                                           payroll-ready timesheet
+                                                                                                                                           data
+                                                                                                                                             So that finance can
+                                                                                                                      AC1: User can        run monthly payroll
+                                                                                                                      export payroll-ready without errors
+                                                                                                                      timesheet data;
+                                                                                                                      validation shown for Scenario: Happy path
+                                                                                                                      required fields.         Given an authorized
+                                                                                                                      AC2: Only            Payroll Specialist is
+                                                                                                                      authorized roles can logged in
+                                                                                                                      access this feature.     When they complete
+                                                                                                                      AC3: Actions are     the primary action
+                                                                                                                      audited with user,       Then the system
+                                                                                                                      timestamp,           records it and shows a
+                        As a Payroll                                                                                  before/after values. success confirmation
+                        Specialist, I                                                                                 AC4: Notifications
+                        want to                                                                                       are sent on key        Scenario: Permission Security: RBAC
+                        export                                                                                        state changes        denied                   & audit;
+                        payroll-ready                                                                                 (create, approve,        Given an             Performance:
+                        timesheet                                                                                     reject).             unauthorized user        p95<500ms;
+                        data, so that                                                                                 AC5: Errors are          When they attempt Availability:
+                        finance can                         to export   finance can                                   clear; retries and   the action               99.9% monthly; Created 2025-09-
+                        run monthly                         payroll-    run monthly                                   idempotency              Then access is       Usability:      12T10:02:01.313339Z
+                        payroll                  As a       ready       payroll                       Timesheet,      handled where        denied with an           WCAG AA;        | UUID=f3a796d2-
+OHRM-                   without       Payroll Payroll timesheet         without                       Payroll,        applicable.          explanatory message      Privacy: PII    3b62-4392-8534-
+US-006 Payroll          errors.       Specialist Specialist data        errors      Could     5Low    Reports                                                       masked in logs. ff17ddb7cf15
+                                                                                                                                           Feature: Attendance -
+                                                                                                                                           OHRM-US-007
+                                                                                                                                             As a Employee
+                                                                                                                                             I want to punch in/out
+                                                                                                                      AC1: User can        via web with geofence
+                                                                                                                      punch in/out via web So that attendance is
+                                                                                                                      with geofence;       accurate and fair
+                                                                                                                      validation shown for
+                                                                                                                      required fields.       Scenario: Happy path
+                                                                                                                      AC2: Only                Given an authorized
+                                                                                                                      authorized roles can Employee is logged in
+                                                                                                                      access this feature.     When they complete
+                                                                                                                      AC3: Actions are     the primary action
+                                                                                                                      audited with user,       Then the system
+                                                                                                                      timestamp,           records it and shows a
+                                                                                                                      before/after values. success confirmation
+                        As a                                                                                          AC4: Notifications                            Security: RBAC
+                        Employee, I                                                                                   are sent on key        Scenario: Permission & audit;
+                        want to                                                                                       state changes        denied                   Performance:
+                        punch in/out                                                                                  (create, approve,        Given an             p95<500ms;
+                        via web with                                                                                  reject).             unauthorized user        Availability:
+                        geofence, so                                                                                  AC5: Errors are          When they attempt 99.9% monthly; Created 2025-09-
+                        that                          to punch                                                        clear; retries and   the action               Usability:      12T10:02:01.313371Z
+                        attendance is                 in/out via        attendance                                    idempotency              Then access is       WCAG AA;        | UUID=196f4f66-
+OHRM-                   accurate and          As a    web with          is accurate                  Attendance,      handled where        denied with an           Privacy: PII    86b8-4485-ac6d-
+US-007 Attendance       fair.         EmployeeEmployeegeofence          and fair    Must      8MediumGeolocation      applicable.          explanatory message masked in logs. 691b8651747c
+                                                                                                                                           Feature: Training &
+                                                                                                                                           LMS - OHRM-US-008
+                                                                                                                                             As a Training Admin
+                                                                                                                                             I want to assign
+                                                                                                                                           mandatory courses
+                                                                                                                                             So that employees
+                                                                                                                      AC1: User can        meet compliance
+                                                                                                                      assign mandatory requirements
+                                                                                                                      courses; validation
+                                                                                                                      shown for required Scenario: Happy path
+                                                                                                                      fields.                  Given an authorized
+                                                                                                                      AC2: Only            Training Admin is
+                                                                                                                      authorized roles can logged in
+                                                                                                                      access this feature.     When they complete
+                                                                                                                      AC3: Actions are     the primary action
+                                                                                                                      audited with user,       Then the system
+                                                                                                                      timestamp,           records it and shows a
+                                                                                                                      before/after values. success confirmation
+                        As a Training                                                                                 AC4: Notifications                            Security: RBAC
+                        Admin, I want                                                                                 are sent on key        Scenario: Permission & audit;
+                        to assign                                                                                     state changes        denied                   Performance:
+                        mandatory                                                                                     (create, approve,        Given an             p95<500ms;
+                        courses, so                                                                                   reject).             unauthorized user        Availability:
+                        that                                                                                          AC5: Errors are          When they attempt 99.9% monthly; Created 2025-09-
+                        employees                                       employees                                     clear; retries and   the action               Usability:      12T10:02:01.313401Z
+                        meet                As a     to assign          meet                          Courses,        idempotency              Then access is       WCAG AA;        | UUID=182a141a-
+OHRM-                   compliance Training Training mandatory          compliance                    Users,          handled where        denied with an           Privacy: PII    8341-4045-aaf1-
+US-008 Training & LMS   requirements. Admin Admin    courses            requirementsShould   13High   Notifications   applicable.          explanatory message masked in logs. 976b25d8722b
+                                                                                                                                             Feature: Employee
+                                                                                                                                             Self-Service - OHRM-
+                                                                                                                                             US-009
+                                                                                                                                              As a Employee
+                                                                                                                                              I want to update
+                                                                                                                         AC1: User can       personal contact and
+                                                                                                                         update personal     bank details
+                                                                                                                         contact and bank     So that HR records
+                                                                                                                         details; validation stay accurate
+                                                                                                                         shown for required
+                                                                                                                         fields.                Scenario: Happy path
+                                                                                                                         AC2: Only                Given an authorized
+                                                                                                                         authorized roles can Employee is logged in
+                                                                                                                         access this feature.     When they complete
+                                                                                                                         AC3: Actions are     the primary action
+                                                                                                                         audited with user,       Then the system
+                                                                                                                         timestamp,           records it and shows a
+                                                                                                                         before/after values. success confirmation
+                                                                                                                         AC4: Notifications
+                             As a                                                                                        are sent on key        Scenario: Permission Security: RBAC
+                             Employee, I                                                                                 state changes        denied                   & audit;
+                             want to                                                                                     (create, approve,        Given an             Performance:
+                             update                                                                                      reject).             unauthorized user        p95<500ms;
+                             personal                                                                                    AC5: Errors are          When they attempt Availability:
+                             contact and                                                                                 clear; retries and   the action               99.9% monthly; Created 2025-09-
+                             bank details,                 to update                                                     idempotency              Then access is       Usability:      12T10:02:01.313422Z
+                             so that HR                    personal     HR records                                       handled where        denied with an           WCAG AA;        | UUID=a14b0591-
+OHRM-                        records stay          As a    contact and stay                                              applicable.          explanatory message Privacy: PII         54c0-489b-b3cf-
+US-009 Employee Self-Service accurate.     EmployeeEmployeebank details accurate   Could          3Low    Users, Audit                                                 masked in logs. bab9d5e0a509
+                                                                                                                                              Feature: Admin
+                                                                                                                                              Permissions - OHRM-
+                                                                                                                                              US-010
+                                                                                                                                                As a System Admin
+                                                                                                                                                I want to define role-
+                                                                                                                                              based access control
+                                                                                                                         AC1: User can        (RBAC)
+                                                                                                                         define role-based      So that data stays
+                                                                                                                         access control       secure
+                                                                                                                         (RBAC); validation
+                                                                                                                         shown for required Scenario: Happy path
+                                                                                                                         fields.                  Given an authorized
+                                                                                                                         AC2: Only            System Admin is
+                                                                                                                         authorized roles can logged in
+                                                                                                                         access this feature.     When they complete
+                                                                                                                         AC3: Actions are     the primary action
+                                                                                                                         audited with user,       Then the system
+                                                                                                                         timestamp,           records it and shows a
+                                                                                                                         before/after values. success confirmation
+                                                                                                                         AC4: Notifications                            Security: RBAC
+                                                                                                                         are sent on key        Scenario: Permission & audit;
+                            As a System                                                                                  state changes        denied                   Performance:
+                            Admin, I want                                                                                (create, approve,        Given an             p95<500ms;
+                            to define role-                                                                              reject).             unauthorized user        Availability:
+                            based access                      to define                                                  AC5: Errors are          When they attempt 99.9% monthly; Created 2025-09-
+                            control                           role-based                                                 clear; retries and   the action               Usability:      12T10:02:01.313435Z
+                            (RBAC), so               As a     access                                                     idempotency              Then access is       WCAG AA;        | UUID=61e9f3b9-
+OHRM-                       that data       System   System   control    data stays                                      handled where        denied with an           Privacy: PII    115f-4022-b26b-
+US-010 Admin Permissions    stays secure. Admin      Admin    (RBAC)     secure         Must      5MediumAuth, Roles     applicable.          explanatory message masked in logs. b919a9d002f3
+                                                                                                                                              Feature: Notifications -
+                                                                                                                                              OHRM-US-011
+                                                                                                                                                As a HR Manager
+                                                                                                                                                I want to configure
+                                                                                                                                              reminder emails for
+                                                                                                                         AC1: User can        overdue tasks
+                                                                                                                         configure reminder So that deadlines are
+                                                                                                                         emails for overdue not missed
+                                                                                                                         tasks; validation
+                                                                                                                         shown for required Scenario: Happy path
+                                                                                                                         fields.                  Given an authorized
+                                                                                                                         AC2: Only            HR Manager is logged
+                                                                                                                         authorized roles can in
+                                                                                                                         access this feature.     When they complete
+                                                                                                                         AC3: Actions are     the primary action
+                                                                                                                         audited with user,       Then the system
+                                                                                                                         timestamp,           records it and shows a
+                                                                                                                         before/after values. success confirmation
+                            As a HR                                                                                      AC4: Notifications                            Security: RBAC
+                            Manager, I                                                                                   are sent on key        Scenario: Permission & audit;
+                            want to                                                                                      state changes        denied                   Performance:
+                            configure                                                                                    (create, approve,        Given an             p95<500ms;
+                            reminder                                                                                     reject).             unauthorized user        Availability:
+                            emails for                        to configure                                               AC5: Errors are          When they attempt 99.9% monthly; Created 2025-09-
+                            overdue                           reminder                                                   clear; retries and   the action               Usability:      12T10:02:01.313447Z
+                            tasks, so that                    emails for deadlines                                       idempotency              Then access is       WCAG AA;        | UUID=0ae60cd5-
+OHRM-                       deadlines are HR    As a HR       overdue      are not                        Email,         handled where        denied with an           Privacy: PII    360b-4ac3-b30a-
+US-011                      not missed. Manager Manager       tasks        missed                         Scheduler      applicable.          explanatory message masked in logs. 03ff48a2e7a3
+         Notifications                                                                  Should    8High
+                                                                                                                                              Feature: Reports &
+                                                                                                                                              Dashboards - OHRM-
+                                                                                                                                              US-012
+                                                                                                                                                As a HR Manager
+                                                                                                                                                I want to view
+                                                                                                                                              headcount, attrition
+                                                                                                                                              and leave trends
+                                                                                                                         AC1: User can view So that leadership
+                                                                                                                         headcount, attrition gets insights
+                                                                                                                         and leave trends;
+                                                                                                                         validation shown for Scenario: Happy path
+                                                                                                                         required fields.         Given an authorized
+                                                                                                                         AC2: Only            HR Manager is logged
+                                                                                                                         authorized roles can in
+                                                                                                                         access this feature.     When they complete
+                                                                                                                         AC3: Actions are     the primary action
+                                                                                                                         audited with user,       Then the system
+                                                                                                                         timestamp,           records it and shows a
+                                                                                                                         before/after values. success confirmation
+                                                                                                                         AC4: Notifications                           Security: RBAC
+                            As a HR                                                                                      are sent on key        Scenario: Permission & audit;
+                            Manager, I                                                                                   state changes        denied                  Performance:
+                            want to view                                                                                 (create, approve,        Given an            p95<500ms;
+                            headcount,                                                                                   reject).             unauthorized user       Availability:
+                            attrition and                                                                                AC5: Errors are          When they attempt 99.9% monthly; Created 2025-09-
+                            leave trends,                     to view                                                    clear; retries and   the action              Usability:     12T10:02:01.313462Z
+                            so that                           headcount,                                                 idempotency              Then access is      WCAG AA;       | UUID=aee28cb0-
+OHRM-                       leadership     HR      As a HR    attrition and leadership                    Reports,       handled where        denied with an          Privacy: PII   40dc-45a0-9fdd-
+US-012 Reports & Dashboards gets insights. Manager Manager    leave trends gets insights Could   13Low    Analytics      applicable.          explanatory message masked in logs. 4e9c7c285980
+                                                                                                                                           Feature: Document
+                                                                                                                                           Management - OHRM-
+                                                                                                                                           US-013
+                                                                                                                                            As a HR Manager
+                                                                                                                                            I want to collect
+                                                                                                                                           signed policies from
+                                                                                                                     AC1: User can         employees
+                                                                                                                     collect signed         So that we stay
+                                                                                                                     policies from         compliant
+                                                                                                                     employees;
+                                                                                                                     validation shown for Scenario: Happy path
+                                                                                                                     required fields.          Given an authorized
+                                                                                                                     AC2: Only             HR Manager is logged
+                                                                                                                     authorized roles can in
+                                                                                                                     access this feature.      When they complete
+                                                                                                                     AC3: Actions are      the primary action
+                                                                                                                     audited with user,        Then the system
+                                                                                                                     timestamp,            records it and shows a
+                                                                                                                     before/after values. success confirmation
+                                                                                                                     AC4: Notifications                            Security: RBAC
+                          As a HR                                                                                    are sent on key         Scenario: Permission & audit;
+                          Manager, I                                                                                 state changes         denied                  Performance:
+                          want to                                                                                    (create, approve,         Given an            p95<500ms;
+                          collect signed                                                                             reject).              unauthorized user       Availability:
+                          policies from                                                                              AC5: Errors are           When they attempt 99.9% monthly; Created 2025-09-
+                          employees,                         to collect                                              clear; retries and    the action              Usability:      12T10:02:01.313472Z
+                          so that we                         signed                                                  idempotency               Then access is      WCAG AA;        | UUID=66f77e88-
+OHRM- Document            stay           HR      As a HR     policies fromwe stay                                    handled where         denied with an          Privacy: PII    e48e-43ce-a99c-
+US-013 Management         compliant.     Manager Manager     employees compliant      Must      3MediumDocs, E-sign applicable.            explanatory message masked in logs. 9a4a84bf1c0a
+                                                                                                                                           Feature: Benefits -
+                                                                                                                                           OHRM-US-014
+                                                                                                                                             As a Benefits Admin
+                                                                                                                                             I want to enroll
+                                                                                                                                           employees in benefit
+                                                                                                                                           plans
+                                                                                                                                             So that employees
+                                                                                                                     AC1: User can enrollreceive the right
+                                                                                                                     employees in benefit coverage
+                                                                                                                     plans; validation
+                                                                                                                     shown for required Scenario: Happy path
+                                                                                                                     fields.                   Given an authorized
+                                                                                                                     AC2: Only             Benefits Admin is
+                                                                                                                     authorized roles can logged in
+                                                                                                                     access this feature.      When they complete
+                                                                                                                     AC3: Actions are      the primary action
+                                                                                                                     audited with user,        Then the system
+                                                                                                                     timestamp,            records it and shows a
+                                                                                                                     before/after values. success confirmation
+                                                                                                                     AC4: Notifications
+                          As a Benefits                                                                                                                            Security: RBAC
+                                                                                                                     are sent on key         Scenario: Permission
+                          Admin, I want                                                                                                                            & audit;
+                                                                                                                     state changes         denied
+                          to enroll                                                                                                                                Performance:
+                                                                                                                     (create, approve,         Given an
+                          employees in                                                                                                                             p95<500ms;
+                                                                                                                     reject).              unauthorized user
+                          benefit plans,                                                                                                                           Availability:
+                                                                                                                     AC5: Errors are           When they attempt
+                          so that                                                                                                                                  99.9% monthly; Created 2025-09-
+                                                                                                                     clear; retries and    the action
+                          employees                          to enroll    employees                                                                                Usability:      12T10:02:01.313483Z
+                                                                                                                     idempotency               Then access is
+                          receive the             As a       employees    receive the                                                                              WCAG AA;        | UUID=ac0ad05e-
+                                                                                                                     handled where         denied with an
+OHRM-                     right          Benefits Benefits   in benefit   right                        Benefits,                                                   Privacy: PII    ffd0-4641-af55-
+                                                                                                                     applicable.           explanatory message
+US-014 Benefits           coverage.      Admin    Admin      plans        coverage    Should    5High Payroll                                                      masked in logs. 96bfff4f60f2
+                                                                                                                                           Feature: Travel &
+                                                                                                                                           Expense - OHRM-US-
+                                                                                                                                           015
+                                                                                                                                             As a Employee
+                                                                                                                                             I want to submit
+                                                                                                                                           expense claims with
+                                                                                                                     AC1: User can         receipts
+                                                                                                                     submit expense          So that I get
+                                                                                                                     claims with receipts; reimbursed quickly
+                                                                                                                     validation shown for
+                                                                                                                     required fields.        Scenario: Happy path
+                                                                                                                     AC2: Only                 Given an authorized
+                                                                                                                     authorized roles can Employee is logged in
+                                                                                                                     access this feature.      When they complete
+                                                                                                                     AC3: Actions are      the primary action
+                                                                                                                     audited with user,        Then the system
+                                                                                                                     timestamp,            records it and shows a
+                                                                                                                     before/after values. success confirmation
+                          As a                                                                                       AC4: Notifications                            Security: RBAC
+                          Employee, I                                                                                are sent on key         Scenario: Permission & audit;
+                          want to                                                                                    state changes         denied                  Performance:
+                          submit                                                                                     (create, approve,         Given an            p95<500ms;
+                          expense                                                                                    reject).              unauthorized user       Availability:
+                          claims with                                                                                AC5: Errors are           When they attempt 99.9% monthly; Created 2025-09-
+                          receipts, so                 to submit                                                     clear; retries and    the action              Usability:      12T10:02:01.313496Z
+                          that I get                   expense     I get                                             idempotency               Then access is      WCAG AA;        | UUID=6cf9c930-
+OHRM-                     reimbursed           As a    claims with reimbursed                          Expenses,     handled where         denied with an          Privacy: PII    7301-41f5-9dc5-
+US-015 Travel & Expense   quickly.     EmployeeEmployeereceipts    quickly    Could             8Low   Approvals     applicable.           explanatory message masked in logs. 5fca3c48e5ff
+                                                                                                                                           Feature: Asset
+                                                                                                                                           Management - OHRM-
+                                                                                                                                           US-016
+                                                                                                                                             As a IT Admin
+                                                                                                                                             I want to assign
+                                                                                                                                           laptops and track
+                                                                                                                     AC1: User can         returns
+                                                                                                                     assign laptops and So that assets are
+                                                                                                                     track returns;        accountable
+                                                                                                                     validation shown for
+                                                                                                                     required fields.        Scenario: Happy path
+                                                                                                                     AC2: Only                 Given an authorized
+                                                                                                                     authorized roles can IT Admin is logged in
+                                                                                                                     access this feature.      When they complete
+                                                                                                                     AC3: Actions are      the primary action
+                                                                                                                     audited with user,        Then the system
+                                                                                                                     timestamp,            records it and shows a
+                                                                                                                     before/after values. success confirmation
+                                                                                                                     AC4: Notifications                            Security: RBAC
+                                                                                                                     are sent on key         Scenario: Permission & audit;
+                          As a IT                                                                                    state changes         denied                  Performance:
+                          Admin, I want                                                                              (create, approve,         Given an            p95<500ms;
+                          to assign                                                                                  reject).              unauthorized user       Availability:
+                          laptops and                                                                                AC5: Errors are           When they attempt 99.9% monthly; Created 2025-09-
+                          track returns,                                                                             clear; retries and    the action              Usability:      12T10:02:01.313507Z
+                          so that assets                     to assign                                               idempotency               Then access is      WCAG AA;        | UUID=335f1d5d-
+OHRM-                     are                   As a IT      laptops and assets are                                  handled where         denied with an          Privacy: PII    0a87-455e-8c5c-
+US-016 Asset Management   accountable. IT Admin Admin        track returns accountable Must    13MediumAssets, Users applicable.           explanatory message masked in logs. 6c49f4c45ec4
+                                                                                                                                               Feature: Disciplinary -
+                                                                                                                                               OHRM-US-017
+                                                                                                                                                As a HR Manager
+                                                                                                                                                I want to log incidents
+                                                                                                                                               and corrective actions
+                                                                                                                        AC1: User can log       So that we maintain
+                                                                                                                        incidents and          fair records
+                                                                                                                        corrective actions;
+                                                                                                                        validation shown for Scenario: Happy path
+                                                                                                                        required fields.         Given an authorized
+                                                                                                                        AC2: Only            HR Manager is logged
+                                                                                                                        authorized roles can in
+                                                                                                                        access this feature.     When they complete
+                                                                                                                        AC3: Actions are     the primary action
+                                                                                                                        audited with user,       Then the system
+                                                                                                                        timestamp,           records it and shows a
+                                                                                                                        before/after values. success confirmation
+                                                                                                                        AC4: Notifications
+                                                                                                                                                                     Security: RBAC
+                                                                                                                        are sent on key        Scenario: Permission
+                             As a HR                                                                                                                                 & audit;
+                                                                                                                        state changes        denied
+                             Manager, I                                                                                                                              Performance:
+                                                                                                                        (create, approve,        Given an
+                             want to log                                                                                                                             p95<500ms;
+                                                                                                                        reject).             unauthorized user
+                             incidents and                                                                                                                           Availability:
+                                                                                                                        AC5: Errors are          When they attempt
+                             corrective                        to log                                                                                                99.9% monthly; Created 2025-09-
+                                                                                                                        clear; retries and   the action
+                             actions, so                       incidents                                                                                             Usability:      12T10:02:01.313518Z
+                                                                                                                        idempotency              Then access is
+                             that we                           and                                                                                                   WCAG AA;        | UUID=1b41d307-
+                                                                                                                        handled where        denied with an
+OHRM-                        maintain fair HR      As a HR     corrective   we maintain                                                                              Privacy: PII    e078-4d4f-bd2c-
+                                                                                                                        applicable.          explanatory message
+US-017 Disciplinary          records.      Manager Manager     actions      fair records Should    3High Cases, Users                                                masked in logs. 0f802f227308
+                                                                                                                                             Feature:
+                                                                                                                                             Separation/Offboarding
+                                                                                                                                             - OHRM-US-018
+                                                                                                                                               As a HR Manager
+                                                                                                                                               I want to schedule
+                                                                                                                                             exit tasks and revoke
+                                                                                                                                             access
+                                                                                                                        AC1: User can          So that secure and
+                                                                                                                        schedule exit tasks smooth exits
+                                                                                                                        and revoke access;
+                                                                                                                        validation shown for Scenario: Happy path
+                                                                                                                        required fields.         Given an authorized
+                                                                                                                        AC2: Only            HR Manager is logged
+                                                                                                                        authorized roles can in
+                                                                                                                        access this feature.     When they complete
+                                                                                                                        AC3: Actions are     the primary action
+                                                                                                                        audited with user,       Then the system
+                                                                                                                        timestamp,           records it and shows a
+                                                                                                                        before/after values. success confirmation
+                             As a HR                                                                                    AC4: Notifications                           Security: RBAC
+                             Manager, I                                                                                 are sent on key        Scenario: Permission & audit;
+                             want to                                                                                    state changes        denied                  Performance:
+                             schedule exit                                                                              (create, approve,        Given an            p95<500ms;
+                             tasks and                                                                                  reject).             unauthorized user       Availability:
+                             revoke                                                                                     AC5: Errors are          When they attempt 99.9% monthly; Created 2025-09-
+                             access, so                        to schedule                                              clear; retries and   the action              Usability:      12T10:02:01.313530Z
+                             that secure                       exit tasks                                               idempotency              Then access is      WCAG AA;        | UUID=eb987b4f-
+OHRM-                        and smooth HR         As a HR     and revoke secure and                      Workflow, IT, handled where        denied with an          Privacy: PII    754c-4ff9-a1e5-
+US-018 Separation/Offboardingexits.        Manager Manager     access      smooth exits Could      5Low   Payroll       applicable.          explanatory message masked in logs. 02c95687c711
+                                                                                                                                             Feature: Organization
+                                                                                                                                             Structure - OHRM-US-
+                                                                                                                                             019
+                                                                                                                                               As a HR Manager
+                                                                                                                                               I want to manage
+                                                                                                                                             departments and
+                                                                                                                        AC1: User can        reporting lines
+                                                                                                                        manage                 So that org charts
+                                                                                                                        departments and      remain current
+                                                                                                                        reporting lines;
+                                                                                                                        validation shown for Scenario: Happy path
+                                                                                                                        required fields.         Given an authorized
+                                                                                                                        AC2: Only            HR Manager is logged
+                                                                                                                        authorized roles can in
+                                                                                                                        access this feature.     When they complete
+                                                                                                                        AC3: Actions are     the primary action
+                                                                                                                        audited with user,       Then the system
+                                                                                                                        timestamp,           records it and shows a
+                                                                                                                        before/after values. success confirmation
+                              As a HR                                                                                   AC4: Notifications                           Security: RBAC
+                              Manager, I                                                                                are sent on key        Scenario: Permission & audit;
+                              want to                                                                                   state changes        denied                  Performance:
+                              manage                                                                                    (create, approve,        Given an            p95<500ms;
+                              departments                                                                               reject).             unauthorized user       Availability:
+                              and reporting                    to manage                                                AC5: Errors are          When they attempt 99.9% monthly; Created 2025-09-
+                              lines, so that                   departments                                              clear; retries and   the action              Usability:      12T10:02:01.313540Z
+                              org charts                       and         org charts                                   idempotency              Then access is      WCAG AA;        | UUID=fa2e44de-
+OHRM-                         remain         HR      As a HR   reporting   remain                                       handled where        denied with an          Privacy: PII    deca-48bb-a3ca-
+US-019 Organization Structure current.       Manager Manager   lines       current      Must       8MediumOrg, Users    applicable.          explanatory message masked in logs. 70129597eb8f
+                                                                                                                                             Feature: Employee
+                                                                                                                                             Directory - OHRM-US-
+                                                                                                                                             020
+                                                                                                                                               As a Employee
+                                                                                                                                               I want to search
+                                                                                                                        AC1: User can        colleagues by name,
+                                                                                                                        search colleagues    department   or skill
+                                                                                                                        by name,               So that collaboration
+                                                                                                                        department or skill; improves
+                                                                                                                          validation shown for
+                                                                                                                          required fields.      Scenario: Happy path
+                                                                                                                          AC2: Only               Given an authorized
+                                                                                                                          authorized roles can Employee is logged in
+                                                                                                                          access this feature.    When they complete
+                                                                                                                          AC3: Actions are     the primary action
+                                                                                                                          audited with user,      Then the system
+                                                                                                                          timestamp,           records it and shows a
+                             As a                                                                                         before/after values. success confirmation
+                             Employee, I                                                                                  AC4: Notifications                              Security: RBAC
+                             want to                                                                                      are sent on key       Scenario: Permission      & audit;
+                             search                                                                                       state changes        denied                     Performance:
+                             colleagues by                                                                                (create, approve,       Given an                p95<500ms;
+                             name,                                                                                        reject).             unauthorized user          Availability:
+                             department                    to search                                                      AC5: Errors are         When they attempt       99.9% monthly; Created 2025-09-
+                             or skill, so                  colleagues                                                     clear; retries and   the action                 Usability:      12T10:02:01.313551Z
+                             that                          by name,                                                       idempotency             Then access is          WCAG AA;        | UUID=17c394c2-
+OHRM-                        collaboration         As a    department collaboration                        Users,         handled where        denied with an             Privacy: PII    d14a-4d0c-8cf0-
+US-020 Employee Directory    improves.     EmployeeEmployeeor skill   improves      Should        13High   Directory      applicable.          explanatory message        masked in logs. bb336402c075
+

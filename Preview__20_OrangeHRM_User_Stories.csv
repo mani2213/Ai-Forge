@@ -1,0 +1,191 @@
+StoryID,Epic,Title,Role,AsA,IWant,SoThat,Priority,StoryPoints,Risk,Dependencies,AcceptanceCriteria,Gherkin,NonFunctional,Notes
+OHRM-US-001,Employee Onboarding,"As a HR Manager, I want to create onboarding checklists and assign tasks to new hires, so that new employees are productive from day one.",HR Manager,As a HR Manager,to create onboarding checklists and assign tasks to new hires,new employees are productive from day one,Must,3,Medium,"User, Workflow, Notifications","AC1: User can new hires; validation shown for required fields.
+AC2: Only authorized roles can access this feature.
+AC3: Actions are audited with user, timestamp, before/after values.
+AC4: Notifications are sent on key state changes (create, approve, reject).
+AC5: Errors are clear; retries and idempotency handled where applicable.","Feature: Employee Onboarding - OHRM-US-001
+  As a HR Manager
+  I want to create onboarding checklists and assign tasks to new hires
+  So that new employees are productive from day one
+
+  Scenario: Happy path
+    Given an authorized HR Manager is logged in
+    When they complete the primary action
+    Then the system records it and shows a success confirmation
+
+  Scenario: Permission denied
+    Given an unauthorized user
+    When they attempt the action
+    Then access is denied with an explanatory message
+",Security: RBAC & audit; Performance: p95<500ms; Availability: 99.9% monthly; Usability: WCAG AA; Privacy: PII masked in logs.,Created 2025-09-12T10:02:01.313117Z | UUID=49190fd2-f26a-4b9b-a89f-8031b6a9b7fa
+OHRM-US-002,Leave Management,"As a Employee, I want to request paid time off from web or mobile, so that I can plan vacations easily.",Employee,As a Employee,to request paid time off from web or mobile,I can plan vacations easily,Should,5,High,"Leave, Calendar, Notifications","AC1: User can request paid time off from web or mobile; validation shown for required fields.
+AC2: Only authorized roles can access this feature.
+AC3: Actions are audited with user, timestamp, before/after values.
+AC4: Notifications are sent on key state changes (create, approve, reject).
+AC5: Errors are clear; retries and idempotency handled where applicable.","Feature: Leave Management - OHRM-US-002
+  As a Employee
+  I want to request paid time off from web or mobile
+  So that I can plan vacations easily
+
+  Scenario: Happy path
+    Given an authorized Employee is logged in
+    When they complete the primary action
+    Then the system records it and shows a success confirmation
+
+  Scenario: Permission denied
+    Given an unauthorized user
+    When they attempt the action
+    Then access is denied with an explanatory message
+",Security: RBAC & audit; Performance: p95<500ms; Availability: 99.9% monthly; Usability: WCAG AA; Privacy: PII masked in logs.,Created 2025-09-12T10:02:01.313231Z | UUID=d2b737e2-0c4e-4553-ac57-c8821fb460fd
+OHRM-US-003,Time Tracking,"As a Team Lead, I want to approve timesheets in bulk, so that payroll runs on time with correct hours.",Team Lead,As a Team Lead,to approve timesheets in bulk,payroll runs on time with correct hours,Could,8,Low,"Timesheet, Payroll","AC1: User can approve timesheets in bulk; validation shown for required fields.
+AC2: Only authorized roles can access this feature.
+AC3: Actions are audited with user, timestamp, before/after values.
+AC4: Notifications are sent on key state changes (create, approve, reject).
+AC5: Errors are clear; retries and idempotency handled where applicable.","Feature: Time Tracking - OHRM-US-003
+  As a Team Lead
+  I want to approve timesheets in bulk
+  So that payroll runs on time with correct hours
+
+  Scenario: Happy path
+    Given an authorized Team Lead is logged in
+    When they complete the primary action
+    Then the system records it and shows a success confirmation
+
+  Scenario: Permission denied
+    Given an unauthorized user
+    When they attempt the action
+    Then access is denied with an explanatory message
+",Security: RBAC & audit; Performance: p95<500ms; Availability: 99.9% monthly; Usability: WCAG AA; Privacy: PII masked in logs.,Created 2025-09-12T10:02:01.313266Z | UUID=a24f000f-1356-4331-972c-8b4b8f21f6c2
+OHRM-US-004,Performance Management,"As a HR Manager, I want to schedule and track performance reviews, so that we maintain continuous feedback.",HR Manager,As a HR Manager,to schedule and track performance reviews,we maintain continuous feedback,Must,13,Medium,"Users, Reviews","AC1: User can schedule and track performance reviews; validation shown for required fields.
+AC2: Only authorized roles can access this feature.
+AC3: Actions are audited with user, timestamp, before/after values.
+AC4: Notifications are sent on key state changes (create, approve, reject).
+AC5: Errors are clear; retries and idempotency handled where applicable.","Feature: Performance Management - OHRM-US-004
+  As a HR Manager
+  I want to schedule and track performance reviews
+  So that we maintain continuous feedback
+
+  Scenario: Happy path
+    Given an authorized HR Manager is logged in
+    When they complete the primary action
+    Then the system records it and shows a success confirmation
+
+  Scenario: Permission denied
+    Given an unauthorized user
+    When they attempt the action
+    Then access is denied with an explanatory message
+",Security: RBAC & audit; Performance: p95<500ms; Availability: 99.9% monthly; Usability: WCAG AA; Privacy: PII masked in logs.,Created 2025-09-12T10:02:01.313299Z | UUID=07cec522-bdef-4b73-93b7-35a484f3e88c
+OHRM-US-005,Recruitment,"As a Recruiter, I want to publish job postings and screen candidates, so that we hire faster with better quality.",Recruiter,As a Recruiter,to publish job postings and screen candidates,we hire faster with better quality,Should,3,High,"Jobs, Candidates, Email","AC1: User can publish job postings and screen candidates; validation shown for required fields.
+AC2: Only authorized roles can access this feature.
+AC3: Actions are audited with user, timestamp, before/after values.
+AC4: Notifications are sent on key state changes (create, approve, reject).
+AC5: Errors are clear; retries and idempotency handled where applicable.","Feature: Recruitment - OHRM-US-005
+  As a Recruiter
+  I want to publish job postings and screen candidates
+  So that we hire faster with better quality
+
+  Scenario: Happy path
+    Given an authorized Recruiter is logged in
+    When they complete the primary action
+    Then the system records it and shows a success confirmation
+
+  Scenario: Permission denied
+    Given an unauthorized user
+    When they attempt the action
+    Then access is denied with an explanatory message
+",Security: RBAC & audit; Performance: p95<500ms; Availability: 99.9% monthly; Usability: WCAG AA; Privacy: PII masked in logs.,Created 2025-09-12T10:02:01.313326Z | UUID=513520c8-5687-49e4-b7df-466b2c7171f3
+OHRM-US-006,Payroll,"As a Payroll Specialist, I want to export payroll-ready timesheet data, so that finance can run monthly payroll without errors.",Payroll Specialist,As a Payroll Specialist,to export payroll-ready timesheet data,finance can run monthly payroll without errors,Could,5,Low,"Timesheet, Payroll, Reports","AC1: User can export payroll-ready timesheet data; validation shown for required fields.
+AC2: Only authorized roles can access this feature.
+AC3: Actions are audited with user, timestamp, before/after values.
+AC4: Notifications are sent on key state changes (create, approve, reject).
+AC5: Errors are clear; retries and idempotency handled where applicable.","Feature: Payroll - OHRM-US-006
+  As a Payroll Specialist
+  I want to export payroll-ready timesheet data
+  So that finance can run monthly payroll without errors
+
+  Scenario: Happy path
+    Given an authorized Payroll Specialist is logged in
+    When they complete the primary action
+    Then the system records it and shows a success confirmation
+
+  Scenario: Permission denied
+    Given an unauthorized user
+    When they attempt the action
+    Then access is denied with an explanatory message
+",Security: RBAC & audit; Performance: p95<500ms; Availability: 99.9% monthly; Usability: WCAG AA; Privacy: PII masked in logs.,Created 2025-09-12T10:02:01.313339Z | UUID=f3a796d2-3b62-4392-8534-ff17ddb7cf15
+OHRM-US-007,Attendance,"As a Employee, I want to punch in/out via web with geofence, so that attendance is accurate and fair.",Employee,As a Employee,to punch in/out via web with geofence,attendance is accurate and fair,Must,8,Medium,"Attendance, Geolocation","AC1: User can punch in/out via web with geofence; validation shown for required fields.
+AC2: Only authorized roles can access this feature.
+AC3: Actions are audited with user, timestamp, before/after values.
+AC4: Notifications are sent on key state changes (create, approve, reject).
+AC5: Errors are clear; retries and idempotency handled where applicable.","Feature: Attendance - OHRM-US-007
+  As a Employee
+  I want to punch in/out via web with geofence
+  So that attendance is accurate and fair
+
+  Scenario: Happy path
+    Given an authorized Employee is logged in
+    When they complete the primary action
+    Then the system records it and shows a success confirmation
+
+  Scenario: Permission denied
+    Given an unauthorized user
+    When they attempt the action
+    Then access is denied with an explanatory message
+",Security: RBAC & audit; Performance: p95<500ms; Availability: 99.9% monthly; Usability: WCAG AA; Privacy: PII masked in logs.,Created 2025-09-12T10:02:01.313371Z | UUID=196f4f66-86b8-4485-ac6d-691b8651747c
+OHRM-US-008,Training & LMS,"As a Training Admin, I want to assign mandatory courses, so that employees meet compliance requirements.",Training Admin,As a Training Admin,to assign mandatory courses,employees meet compliance requirements,Should,13,High,"Courses, Users, Notifications","AC1: User can assign mandatory courses; validation shown for required fields.
+AC2: Only authorized roles can access this feature.
+AC3: Actions are audited with user, timestamp, before/after values.
+AC4: Notifications are sent on key state changes (create, approve, reject).
+AC5: Errors are clear; retries and idempotency handled where applicable.","Feature: Training & LMS - OHRM-US-008
+  As a Training Admin
+  I want to assign mandatory courses
+  So that employees meet compliance requirements
+
+  Scenario: Happy path
+    Given an authorized Training Admin is logged in
+    When they complete the primary action
+    Then the system records it and shows a success confirmation
+
+  Scenario: Permission denied
+    Given an unauthorized user
+    When they attempt the action
+    Then access is denied with an explanatory message
+",Security: RBAC & audit; Performance: p95<500ms; Availability: 99.9% monthly; Usability: WCAG AA; Privacy: PII masked in logs.,Created 2025-09-12T10:02:01.313401Z | UUID=182a141a-8341-4045-aaf1-976b25d8722b
+OHRM-US-009,Employee Self-Service,"As a Employee, I want to update personal contact and bank details, so that HR records stay accurate.",Employee,As a Employee,to update personal contact and bank details,HR records stay accurate,Could,3,Low,"Users, Audit","AC1: User can update personal contact and bank details; validation shown for required fields.
+AC2: Only authorized roles can access this feature.
+AC3: Actions are audited with user, timestamp, before/after values.
+AC4: Notifications are sent on key state changes (create, approve, reject).
+AC5: Errors are clear; retries and idempotency handled where applicable.","Feature: Employee Self-Service - OHRM-US-009
+  As a Employee
+  I want to update personal contact and bank details
+  So that HR records stay accurate
+
+  Scenario: Happy path
+    Given an authorized Employee is logged in
+    When they complete the primary action
+    Then the system records it and shows a success confirmation
+
+  Scenario: Permission denied
+    Given an unauthorized user
+    When they attempt the action
+    Then access is denied with an explanatory message
+",Security: RBAC & audit; Performance: p95<500ms; Availability: 99.9% monthly; Usability: WCAG AA; Privacy: PII masked in logs.,Created 2025-09-12T10:02:01.313422Z | UUID=a14b0591-54c0-489b-b3cf-bab9d5e0a509
+OHRM-US-010,Admin Permissions,"As a System Admin, I want to define role-based access control (RBAC), so that data stays secure.",System Admin,As a System Admin,to define role-based access control (RBAC),data stays secure,Must,5,Medium,"Auth, Roles","AC1: User can define role-based access control (RBAC); validation shown for required fields.
+AC2: Only authorized roles can access this feature.
+AC3: Actions are audited with user, timestamp, before/after values.
+AC4: Notifications are sent on key state changes (create, approve, reject).
+AC5: Errors are clear; retries and idempotency handled where applicable.","Feature: Admin Permissions - OHRM-US-010
+  As a System Admin
+  I want to define role-based access control (RBAC)
+  So that data stays secure
+
+  Scenario: Happy path
+    Given an authorized System Admin is logged in
+    When they complete the primary action
+    Then the system records it and shows a success confirmation
+
+  Scenario: Permission denied
+    Given an unauthorized user
+    When they attempt the action
+    Then access is denied with an explanatory message
+",Security: RBAC & audit; Performance: p95<500ms; Availability: 99.9% monthly; Usability: WCAG AA; Privacy: PII masked in logs.,Created 2025-09-12T10:02:01.313435Z | UUID=61e9f3b9-115f-4022-b26b-b919a9d002f3
